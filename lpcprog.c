@@ -335,7 +335,9 @@ static LPC_DEVICE_TYPE LPCtypes[] =
    { 0xA001CA30, 0x00000000, 1, "4337",                         1024, 512, 15, 4096, SectorTable_43xx, CHIP_VARIANT_LPC43XX }, /* info not yet available */
    { 0xA0000830, 0x00000000, 1, "4350",                            0, 264,  0, 4096, SectorTable_43xx, CHIP_VARIANT_LPC43XX }, /* From UM10503 Rev. 1.4 -- 3 Sep 2012 */
    { 0xA001C830, 0x00000044, 1, "4353",                          512, 512, 11, 4096, SectorTable_43xx, CHIP_VARIANT_LPC43XX }, /* From UM10503 Rev. 1.4 -- 3 Sep 2012 */
-   { 0xA001C830, 0x00000000, 1, "4357",                         1024, 512, 15, 4096, SectorTable_43xx, CHIP_VARIANT_LPC43XX }  /* From UM10503 Rev. 1.4 -- 3 Sep 2012 */
+   { 0xA001C830, 0x00000000, 1, "4357",                         1024, 512, 15, 4096, SectorTable_43xx, CHIP_VARIANT_LPC43XX },  /* From UM10503 Rev. 1.4 -- 3 Sep 2012 */
+   { 0x8001C030, 0x00000000, 1, "4367",                         1024, 154, 15, 4096, SectorTable_43xx, CHIP_VARIANT_LPC43XX },  /* From UM10503 Rev. 1.4 -- 3 Sep 2012 */
+   { 0x8001C060, 0x00000000, 1, "43S67",                         1024, 154, 15, 4096, SectorTable_43xx, CHIP_VARIANT_LPC43XX }  /* From UM10503 Rev. 1.4 -- 3 Sep 2012 */
 };
 
 /***************************** NXP Download *********************************/
