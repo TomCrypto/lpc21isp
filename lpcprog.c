@@ -32,6 +32,8 @@ Portions Copyright (c) by Aeolus Development 2004 http://www.aeolusdevelopment.c
 
 // This file is for the Actual Programming of the LPC Chips
 
+#define FLASH_BANK 0
+
 #if defined(_WIN32)
 #include "malloc.h"
 #if !defined __BORLANDC__
@@ -1022,7 +1024,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
             LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC18XX)
         {
             // TODO: Quick and dirty hack to address bank 0
-            sprintf(tmpString, "P %d %d 0\r\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1);
+            sprintf(tmpString, "P %d %d %d\r\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1, FLASH_BANK);
         }
         else
         {
@@ -1039,7 +1041,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
             LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC18XX)
         {
             // TODO: Quick and dirty hack to address bank 0
-            sprintf(tmpString, "E %d %d 0\r\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1);
+            sprintf(tmpString, "E %d %d %d\r\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1, FLASH_BANK);
         }
         else
         {
@@ -1066,7 +1068,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
             LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC18XX)
         {
             // TODO: Quick and dirty hack to address bank 0
-            sprintf(tmpString, "P %d %d 0\r\n", 0, 0);
+            sprintf(tmpString, "P %d %d %d\r\n", 0, 0, FLASH_BANK);
         }
         else
         {
@@ -1083,7 +1085,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
             LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC18XX)
         {
             // TODO: Quick and dirty hack to address bank 0
-            sprintf(tmpString, "E %d %d 0\r\n", 0, 0);
+            sprintf(tmpString, "E %d %d %d\r\n", 0, 0, FLASH_BANK);
         }
         else
         {
@@ -1115,7 +1117,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
                 LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC18XX)
             {
                 // TODO: Quick and dirty hack to address bank 0
-                sprintf(tmpString, "P %ld %ld 0\r\n", Sector, Sector);
+                sprintf(tmpString, "P %ld %ld %d\r\n", Sector, Sector, FLASH_BANK);
             }
             else
             {
@@ -1136,7 +1138,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
                     LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC18XX)
                 {
                     // TODO: Quick and dirty hack to address bank 0
-                    sprintf(tmpString, "E %ld %ld 0\r\n", Sector, Sector);
+                    sprintf(tmpString, "E %ld %ld %d\r\n", Sector, Sector, FLASH_BANK);
                 }
                 else
                 {
@@ -1473,7 +1475,7 @@ int NxpDownload(ISP_ENVIRONMENT *IspEnvironment)
                     LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC18XX)
                 {
                     // TODO: Quick and dirty hack to address bank 0
-                    sprintf(tmpString, "P %ld %ld 0\r\n", Sector, Sector);
+                    sprintf(tmpString, "P %ld %ld %d\r\n", Sector, Sector, FLASH_BANK);
                 }
                 else
                 {
